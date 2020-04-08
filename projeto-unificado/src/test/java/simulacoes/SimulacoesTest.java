@@ -30,9 +30,9 @@ public class SimulacoesTest extends BaseAPI {
     @Test
     public void simulacaoNaoEncontrada() {
         given().
-            queryParam("name", "45320342055").
+            queryParam("cpf", "45320342055").
         when().
-            get("/v1/simulacao").
+            get("/v1/simulacoes/{cpf}").
         then().
             statusCode(HttpStatus.SC_NOT_FOUND);
     }

@@ -9,13 +9,13 @@ import commons.Base;
 public class RestricoesClient {
 
     public RestricoesClient() {
-        Base.initConfig();;
+        Base.initConfig();
     }
 
     public ValidatableResponse retornaCPFComRestricao(String cpf) {
         return
             given().
-                pathParam("cpf", "97093236014").
+                pathParam("cpf", cpf).
             when().
                 get("/v1/restricoes/{cpf}").
             then().
